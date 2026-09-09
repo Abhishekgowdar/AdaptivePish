@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Button Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #0ea5e9;
+        }
+        h1 {
+            background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .test-btn {
+            padding: 20px 40px;
+            margin: 15px;
+            border: 2px solid #0ea5e9;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            color: white;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .test-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            min-height: 100px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .success { color: #22c55e; font-weight: bold; }
+        .info { color: #0ea5e9; }
+        .step {
+            background: #334155;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+        }
+        .arrow {
+            font-size: 2rem;
+            text-align: center;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 AdaptivePhish - Button Test</h1>
+        <p style="font-size: 1.2rem; color: #94a3b8;">Click the button below to test if your browser works!</p>
+
+        <div class="arrow">👇</div>
+
+        <button class="test-btn" onclick="testButton()">
+            ✅ CLICK ME TO TEST!
+        </button>
+
+        <div id="result">
+            <div class="info">👆 Click the button above to start the test...</div>
+        </div>
+
+        <div class="step">
+            <strong>📍 Step 1:</strong> If the button above works, that's great!
+        </div>
+
+        <div class="step">
+            <strong>📍 Step 2:</strong> Now go back to the main page:
+            <br><br>
+            <a href="/" style="color: #0ea5e9; font-size: 1.2rem; text-decoration: none;">
+                👉 Click here to go to Main Page
+            </a>
+        </div>
+
+        <div class="step">
+            <strong>📍 Step 3:</strong> On the main page, scroll down to find:
+            <br><br>
+            <span style="color: #f59e0b;">⚡ Quick Tests:</span>
+            <br><br>
+            Then click the <span style="color: #22c55e;">✅ Safe Site</span> button!
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: rgba(14, 165, 233, 0.1); border-radius: 8px;">
+            <strong>🔍 Backend Status:</strong>
+            <div id="backend-status" style="margin-top: 10px;">Checking...</div>
+        </div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        function testButton() {
+            clickCount++;
+            const result = document.getElementById('result');
+
+            result.innerHTML = `
+                <div class="success">✅ SUCCESS! Button works perfectly!</div>
+                <br>
+                <div>You clicked <strong>${clickCount}</strong> time(s)</div>
+                <br>
+                <div class="info">✨ Your browser is working correctly!</div>
+                <br>
+                <div>Now go to the <strong>Main Page</strong> (link below) and look for the "Quick Tests" section.</div>
+            `;
+
+            console.log('✅ Button clicked successfully!', clickCount);
+        }
+
+        // Check backend status
+        fetch('http://localhost:5000/health')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('backend-status').innerHTML = `
+                    <span class="success">✅ Backend is running!</span><br>
+                    <span style="color: #94a3b8;">
+                    URL Analyzer: ${data.modules.url_analyzer}<br>
+                    Visual Analyzer: ${data.modules.visual_analyzer}<br>
+                    Text Analyzer: ${data.modules.text_analyzer}
+                    </span>
+                `;
+            })
+            .catch(err => {
+                document.getElementById('backend-status').innerHTML = `
+                    <span style="color: #ef4444;">❌ Backend not responding</span><br>
+                    <span style="color: #94a3b8;">Make sure backend is running!</span>
+                `;
+            });
+
+        console.log('🧪 Test page loaded');
+        console.log('📍 If you can see this in console (F12), your browser debugging works!');
+    </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ AdaptivePhish - Professional AI Phishing Detector</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <span class="logo">🛡️</span>
+                    <span class="brand-name">AdaptivePhish</span>
+                    <span class="badge">AI Powered</span>
+                </div>
+                <div class="nav-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Scans Today</span>
+                        <span class="stat-value" id="scanCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Detection Rate</span>
+                        <span class="stat-value">95%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">Multi-Modal AI Phishing Detection</h1>
+                <p class="hero-subtitle">Advanced protection using Computer Vision, NLP, and Pattern Recognition</p>
+
+                <!-- Status Badges -->
+                <div class="status-badges">
+                    <span class="status-badge status-online">
+                        <span class="status-dot"></span>
+                        All Systems Operational
+                    </span>
+                    <span class="status-badge">
+                        <span class="ai-icon">🤖</span>
+                        3 AI Models Active
+                    </span>
+                    <span class="status-badge">
+                        <span class="shield-icon">🔒</span>
+                        100% Privacy Protected
+                    </span>
+                </div>
+            </section>
+
+            <!-- Analysis Input Section -->
+            <section class="input-section card">
+                <div class="section-header">
+                    <h2>
+                        <span class="icon">🔍</span>
+                        Analyze Suspicious Content
+                    </h2>
+                    <p class="section-subtitle">Use AI to detect phishing attempts in real-time</p>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="url">
+                        <span class="tab-icon">🔗</span>
+                        URL Analysis
+                    </button>
+                    <button class="tab-btn" data-tab="text">
+                        <span class="tab-icon">📝</span>
+                        Text Content
+                    </button>
+                    <button class="tab-btn" data-tab="screenshot">
+                        <span class="tab-icon">🖼️</span>
+                        Screenshot
+                    </button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="tab-content">
+                    <!-- URL Tab -->
+                    <div class="tab-pane active" id="url-tab">
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <span class="input-icon">🌐</span>
+                                <input
+                                    type="text"
+                                    id="urlInput"
+                                    class="input-field"
+                                    placeholder="Enter URL to analyze (e.g., https://suspicious-site.com)"
+                                    autocomplete="off"
+                                >
+                            </div>
+                            <button id="analyzeBtn" class="btn btn-primary btn-large">
+                                <span class="btn-icon">⚡</span>
+                                <span class="btn-text">Analyze Now</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <span class="spinner"></span>
+                                    Analyzing...
+                                </span>
+                            </button>
+                        </div>
+
+                        <!-- Quick Test Examples -->
+                        <div class="quick-tests">
+                            <p class="quick-tests-label">
+                                <span class="label-icon">⚡</span>
+                                Quick Tests:
+                            </p>
+                            <div class="quick-test-grid">
+                                <button class="quick-test-btn safe" data-url="https://www.google.com">
+                                    <span class="test-icon">✅</span>
+                                    <span class="test-label">Safe Site</span>
+                                    <span class="test-url">google.com</span>
+                                </button>
+                                <button class="quick-test-btn warning" data-url="http://paypa1-secure.tk/login">
+                                    <span class="test-icon">⚠️</span>
+                                    <span class="test-label">Suspicious</span>
+                                    <span class="test-url">paypa1-secure.tk</span>
+                                </button>
+                                <button class="quick-test-btn danger" data-url="http://verify-account-urgent.ml">
+                                    <span class="test-icon">🔴</span>
+                                    <span class="test-label">Phishing</span>
+                                    <span class="test-url">verify-urgent.ml</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Tab -->
+                    <div class="tab-pane" id="text-tab">
+                        <div class="text-input-group">
+                            <textarea
+                                id="textInput"
+                                class="text-area"
+                                placeholder="Paste suspicious email or webpage text content here...&#10;&#10;Example:&#10;URGENT! Your account will be suspended in 24 hours!&#10;Click here to verify your identity immediately..."
+                                rows="6"
+                            ></textarea>
+                            <button id="analyzeTextBtn" class="btn btn-primary btn-large">
+                                <span class="btn-icon">🔍</span>
+                                <span class="btn-text">Analyze Text</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <span class="spinner"></span>
+                                    Analyzing...
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot Tab -->
+                    <div class="tab-pane" id="screenshot-tab">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">📸</div>
+                            <h3>Upload Screenshot</h3>
+                            <p>Drag and drop or click to upload webpage screenshot</p>
+                            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                            <button class="btn btn-secondary" onclick="document.getElementById('fileInput').click()">
+                                Choose File
+                            </button>
+                            <p class="upload-note" id="fileName" style="margin-top: 15px; color: var(--text-secondary);"></p>
+                            <button id="analyzeScreenshotBtn" class="btn btn-primary btn-large" style="display: none; margin-top: 20px;">
+                                <span class="btn-icon">🔍</span>
+                                <span class="btn-text">Analyze Screenshot</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <span class="spinner"></span>
+                                    Analyzing...
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <!-- Main Verdict Card -->
+                <div class="card verdict-card glow-card">
+                    <div class="verdict-header">
+                        <div class="verdict-icon-large" id="verdictIconLarge">🟢</div>
+                        <div class="verdict-info">
+                            <h2 id="verdictText" class="verdict-title">SAFE</h2>
+                            <p class="verdict-subtitle">This URL appears to be legitimate</p>
+                            <p class="analyzed-url-display" id="analyzedUrl"></p>
+                        </div>
+                        <div class="verdict-score-circle">
+                            <svg width="120" height="120">
+                                <circle cx="60" cy="60" r="54" fill="none" stroke="var(--border-color)" stroke-width="8"></circle>
+                                <circle id="scoreCircle" cx="60" cy="60" r="54" fill="none" stroke="var(--success-color)" stroke-width="8" stroke-dasharray="339.292" stroke-dashoffset="339.292" transform="rotate(-90 60 60)"></circle>
+                            </svg>
+                            <div class="score-text">
+                                <span id="scoreNumber" class="score-number">0</span>
+                                <span class="score-percent">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Meter -->
+                    <div class="risk-meter">
+                        <div class="risk-meter-labels">
+                            <span class="risk-label">Risk Level</span>
+                            <span id="riskLevelText" class="risk-level-value">LOW</span>
+                        </div>
+                        <div class="risk-meter-bar">
+                            <div id="riskMeterFill" class="risk-meter-fill"></div>
+                            <div class="risk-meter-markers">
+                                <span style="left: 0%">0</span>
+                                <span style="left: 25%">25</span>
+                                <span style="left: 50%">50</span>
+                                <span style="left: 75%">75</span>
+                                <span style="left: 100%">100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Modules Grid -->
+                <div class="modules-grid">
+                    <!-- Module 1: URL Analysis -->
+                    <div class="card module-card module-inactive">
+                        <div class="module-card-header">
+                            <span class="module-card-icon">🔗</span>
+                            <div>
+                                <h3 class="module-card-title">URL Analysis</h3>
+                                <p class="module-card-subtitle">Pattern Recognition</p>
+                            </div>
+                            <span id="urlModuleScore" class="module-card-score">N/A</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="urlModuleBar" class="progress-fill"></div>
+                        </div>
+                        <div class="module-card-status">
+                            <span class="status-dot"></span>
+                            <span>Requires URL</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 2: Visual Analysis -->
+                    <div class="card module-card module-inactive">
+                        <div class="module-card-header">
+                            <span class="module-card-icon">🖼️</span>
+                            <div>
+                                <h3 class="module-card-title">Visual Analysis</h3>
+                                <p class="module-card-subtitle">CLIP AI Model</p>
+                            </div>
+                            <span id="visualModuleScore" class="module-card-score">N/A</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="visualModuleBar" class="progress-fill"></div>
+                        </div>
+                        <div class="module-card-status">
+                            <span class="status-dot"></span>
+                            <span>Requires Screenshot</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 3: Text Analysis -->
+                    <div class="card module-card module-inactive">
+                        <div class="module-card-header">
+                            <span class="module-card-icon">🤖</span>
+                            <div>
+                                <h3 class="module-card-title">Text Analysis</h3>
+                                <p class="module-card-subtitle">DistilBERT NLP</p>
+                            </div>
+                            <span id="textModuleScore" class="module-card-score">N/A</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="textModuleBar" class="progress-fill"></div>
+                        </div>
+                        <div class="module-card-status">
+                            <span class="status-dot"></span>
+                            <span>Requires Text Content</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Findings -->
+                <div class="card findings-card">
+                    <div class="card-header-flex">
+                        <div>
+                            <h3>
+                                <span class="icon">🔍</span>
+                                Detection Details
+                            </h3>
+                            <p class="card-subtitle">AI-powered threat indicators</p>
+                        </div>
+                        <span id="findingsCount" class="findings-count">0 flags</span>
+                    </div>
+                    <div id="findingsList" class="findings-grid">
+                        <!-- Findings will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Technical Details (Collapsible) -->
+                <div class="card technical-card">
+                    <button class="collapsible-header" id="technicalToggle">
+                        <div>
+                            <h3>
+                                <span class="icon">⚙️</span>
+                                Technical Details
+                            </h3>
+                            <p class="card-subtitle">Raw API response</p>
+                        </div>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div id="technicalContent" class="collapsible-content" style="display: none;">
+                        <pre id="technicalData" class="code-block"></pre>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="actions-bar">
+                    <button class="btn btn-secondary" onclick="location.reload()">
+                        <span class="btn-icon">🔄</span>
+                        New Scan
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.print()">
+                        <span class="btn-icon">🖨️</span>
+                        Print Report
+                    </button>
+                    <button class="btn btn-secondary" id="exportBtn">
+                        <span class="btn-icon">📥</span>
+                        Export JSON
+                    </button>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section id="errorSection" class="error-section" style="display: none;">
+                <div class="card error-card">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Analysis Failed</h3>
+                    <p id="errorMessage" class="error-message"></p>
+                    <button class="btn btn-primary" onclick="location.reload()">Try Again</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AdaptivePhish</h4>
+                    <p>Multi-Modal AI Phishing Detection System</p>
+                </div>
+                <div class="footer-section">
+                    <h4>AI Models</h4>
+                    <p>CLIP • DistilBERT • Pattern Recognition</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <p>Python • FastAPI • PyTorch • Transformers</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AdaptivePhish - Privacy-First AI Security</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
