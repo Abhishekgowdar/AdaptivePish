@@ -82,7 +82,20 @@ That's it! The system will:
 
 Watch AdaptivePhish detect phishing in real-time:
 
-*[Upload your demo video to YouTube and add link here]*
+[**▶️ Watch Demo Video (60 seconds)**](https://github.com/aabhi7785/AdaptivePish/raw/main/video/demo.mp4)
+
+<details>
+<summary>Click to download video</summary>
+
+[Download demo.mp4](https://github.com/aabhi7785/AdaptivePish/raw/main/video/demo.mp4) (18MB)
+
+Demonstrates:
+- URL Analysis detecting homograph attacks
+- Visual AI (CLIP) analyzing screenshots
+- Text AI (DistilBERT) detecting social engineering
+- Multi-modal fusion in action
+
+</details>
 
 ---
 
