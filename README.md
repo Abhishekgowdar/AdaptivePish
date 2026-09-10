@@ -44,7 +44,7 @@ Get up and running in **2 minutes**:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/aabhi7785/AdaptivePhish.git
+git clone https://github.com/Abhishekgowdar/AdaptivePhish.git
 cd AdaptivePhish
 
 # 2. Install dependencies
@@ -82,12 +82,12 @@ That's it! The system will:
 
 Watch AdaptivePhish detect phishing in real-time:
 
-[**▶️ Watch Demo Video (60 seconds)**](https://github.com/aabhi7785/AdaptivePish/raw/main/video/demo.mp4)
+[**▶️ Watch Demo Video (60 seconds)**](https://github.com/Abhishekgowdar/AdaptivePish/raw/main/video/demo.mp4)
 
 <details>
 <summary>Click to download video</summary>
 
-[Download demo.mp4](https://github.com/aabhi7785/AdaptivePish/raw/main/video/demo.mp4) (18MB)
+[Download demo.mp4](https://github.com/Abhishekgowdar/AdaptivePish/raw/main/video/demo.mp4) (18MB)
 
 Demonstrates:
 - URL Analysis detecting homograph attacks
@@ -381,7 +381,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Abhishek Gowda R.** 
 
-Project Link: [https://github.com/aabhi7785/AdaptivePhish](https://github.com/aabhi7785/AdaptivePhish)
+Project Link: [https://github.com/Abhishekgowdar/AdaptivePhish](https://github.com/Abhishekgowdar/AdaptivePhish)
 
 ---
 
@@ -403,7 +403,7 @@ If you use AdaptivePhish in your research or project, please cite:
   title = {AdaptivePhish: Multi-Modal AI Phishing Detection},
   year = {2026},
   publisher = {GitHub},
-  url = {https://github.com/aabhi7785/AdaptivePhish}
+  url = {https://github.com/Abhishekgowdar/AdaptivePhish}
 }
 ```
 
@@ -413,7 +413,7 @@ If you use AdaptivePhish in your research or project, please cite:
 
 **Built with ❤️ for a safer internet**
 
-[Report Bug](https://github.com/aabhi7785/AdaptivePhish/issues) · [Request Feature](https://github.com/aabhi7785/AdaptivePhish/issues)
+[Report Bug](https://github.com/Abhishekgowdar/AdaptivePhish/issues) · [Request Feature](https://github.com/Abhishekgowdar/AdaptivePhish/issues)
 
 Made by **Abhishek Gowda R.** | 2026
 
