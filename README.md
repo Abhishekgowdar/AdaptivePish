@@ -244,11 +244,12 @@ AdaptivePhish/
 │   │   └── enhanced.css            # Animations & effects
 │   └── js/
 │       └── app.js                  # Frontend logic
-├── presentation/
-│   ├── PRESENTATION_SLIDES.md      # 21 presentation slides
-│   ├── PRESENTATION_SCRIPT.md      # 15-minute script
-│   └── PRESENTATION_CHEATSHEET.md  # Quick reference
 ├── screenshots/                     # Demo screenshots
+│   ├── main-interface.png          # Main UI screenshot
+│   ├── url-analysis.png            # URL analysis demo
+│   └── multimodal-results.png      # Detection results
+├── video/
+│   └── demo.mp4                    # 60-second demo video
 ├── .gitignore                      # Git exclusions
 ├── LICENSE                         # MIT License
 ├── README.md                       # This file
@@ -362,8 +363,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📚 Documentation
 
 - **[AI Explanation](AI_EXPLANATION.md)** - Deep dive into how CLIP and DistilBERT are used
-- **[Presentation Materials](presentation/)** - Complete slides, script, and cheat sheet
 - **[API Documentation](http://localhost:8000/docs)** - FastAPI auto-generated docs (when running)
+- **[Demo Video](video/demo.mp4)** - 60-second demonstration of the system in action
 
 ---
 
